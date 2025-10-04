@@ -1,20 +1,29 @@
 import java.util.Scanner;
 
-public class test {
+public class newRev {
   public static void main(String[] args) {
-    int x = 0;
-
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter a number: ");
     int num = sc.nextInt();
-    int rev = num;
+    int zeros = 0;
 
-    for (int i = 0; num % (Math.pow(10, i)) != num; i++) {
-      x *= 10;
-      x += (rev % 10);
-      rev /= 10;
+    for (int j = num; j % 10 == 0;) {
+      zeros++;
+      j /= 10;
     }
 
-    // System.out.println("rev = " + x);
+    int rev = 0;
+    while (num != 0) {
+      int digit = num % 10;
+      rev = rev * 10 + digit;
+      num /= 10;
+    }
+
+    System.out.print("rev = ");
+    for (int x = 0; x < zeros; x++) {
+      System.out.print(0);
+    }
+    System.out.print(rev);
+    sc.close();
   }
 }
