@@ -15,7 +15,6 @@ public class Q6 {
     } else if (age <= 64) {
         System.out.println("adult");
     } else {
-        System.out.println("senior");
-    }
+        System.out.println("senior"); }
   }
 }
